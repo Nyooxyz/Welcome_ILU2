@@ -18,5 +18,13 @@ class WelcomeTest {
 	void test_welcome_bob() {
 		assertEquals("Hello, Bob", welcoming.welcome("bob"));
 	}
+	
+	@Test
+	void test_welcome_other_names() {
+		assertEquals("Hello, Tom", welcoming.welcome("tom"));
+		assertEquals("Hello, Jerry", welcoming.welcome("jerry"));
+		assertEquals("Hello, Florian", welcoming.welcome("florian"));
+
+	}
 
 }
