@@ -26,6 +26,16 @@ public class Welcome {
 			return res.toString().toUpperCase();
 		} 
 		
+		if(input.contains(",")) {
+			String[] noms = input.split(",");
+			res.append(Character.toUpperCase(noms[0].charAt(0)));
+			res.append(noms[0].substring(1));
+			res.append(", ");
+			res.append(Character.toUpperCase(noms[1].charAt(0)));
+			res.append(noms[1].substring(1));
+			return res.toString();
+		}
+		
 		res.append(Character.toUpperCase(input.charAt(0)));
 		res.append(input.substring(1));
 		return res.toString();
