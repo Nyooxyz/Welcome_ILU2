@@ -28,12 +28,14 @@ public class Welcome {
 		
 		if(input.contains(",")) {
 			String[] noms = input.split(",");
-			res.append(Character.toUpperCase(noms[0].charAt(0)));
-			res.append(noms[0].substring(1));
-			res.append(", ");
-			res.append(Character.toUpperCase(noms[1].charAt(0)));
-			res.append(noms[1].substring(1));
-			return res.toString();
+			
+			for (int i = 0; i<noms.length; i++) {
+				res.append(Character.toUpperCase(noms[i].charAt(0)));
+				res.append(noms[i].substring(1));
+				res.append(", ");
+			}
+	
+			return res.substring(0, res.length() - 2);
 		}
 		
 		res.append(Character.toUpperCase(input.charAt(0)));
