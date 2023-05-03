@@ -33,5 +33,11 @@ class WelcomeTest {
 		assertEquals("Hello, my friend", welcoming.welcome(""));
 		assertEquals("Hello, my friend", welcoming.welcome(null));
 	}
+	
+	@Test
+	void test_welcome_yell() {
+		assertEquals("HELLO, JERRY !", welcoming.welcome("JERRY"));
+		assertEquals("HELLO, FLORIAN !", welcoming.welcome(" FLORIAN  "));
+	}
 
 }

@@ -8,23 +8,26 @@ public class Welcome {
 	
 	public static String welcome(String input) {
 
-		StringBuilder res = new StringBuilder();
-		res.append(HELLO);
+		StringBuilder res = new StringBuilder(HELLO);
 		
 		if(input == null) {
-			res.append(FRIEND);
-			return res.toString();
+			return res.append(FRIEND).toString();
 		} 
 		
 		input = input.trim();
 		
 		if (input.isEmpty()) {
-			res.append(FRIEND);
-		} else {
-			res.append(Character.toUpperCase(input.charAt(0)));
-			res.append(input.substring(1));
-		}
-	
+			return res.append(FRIEND).toString();
+		} 
+		
+		if (input.equals(input.toUpperCase())) {
+			res.append(input);
+			res.append(" !");
+			return res.toString().toUpperCase();
+		} 
+		
+		res.append(Character.toUpperCase(input.charAt(0)));
+		res.append(input.substring(1));
 		return res.toString();
 	}
 }
