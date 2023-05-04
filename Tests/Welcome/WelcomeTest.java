@@ -42,20 +42,21 @@ class WelcomeTest {
 	
 	@Test
 	void test_welcome_two() {
-		assertEquals("Hello, Amy, Bob", welcoming.welcome("amy,bob"));
-		assertEquals("Hello, Florian, Flavie", welcoming.welcome(" florian,flavie "));
+		assertEquals("Hello, Amy and Bob", welcoming.welcome("amy,bob"));
+		assertEquals("Hello, Florian and Flavie", welcoming.welcome(" florian,flavie "));
 	}
 	
 	@Test
 	void test_welcome_plusieurs() {
-		assertEquals("Hello, Amy, Bob, Jerry", welcoming.welcome("amy,bob,jerry"));
-		assertEquals("Hello, Florian, Flavie, Flavien, Florence, Flo", welcoming.welcome(" florian,flavie,flavien,florence,flo "));
+		assertEquals("Hello, Amy, Bob and Jerry", welcoming.welcome("amy,bob,jerry"));
+		assertEquals("Hello, Florian, Flavie, Flavien, Florence and Flo", welcoming.welcome(" florian,flavie,flavien,florence,flo "));
 	}
 	
 	@Test
 	void test_welcome_plusieurs_with_yell() {
-		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", welcoming.welcome("amy,BOB,jerry"));
-		assertEquals("Hello, Flavie, Florence. AND HELLO, FLORIAN, FLAVIEN, FLO !", welcoming.welcome(" FLORIAN,flavie,FLAVIEN,florence,FLO "));
+		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !", welcoming.welcome("amy,BOB,jerry"));
+		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !", welcoming.welcome("bob,AMY,jerry,JACK"));
 	}
+	
 
 }
