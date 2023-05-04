@@ -51,5 +51,11 @@ class WelcomeTest {
 		assertEquals("Hello, Amy, Bob, Jerry", welcoming.welcome("amy,bob,jerry"));
 		assertEquals("Hello, Florian, Flavie, Flavien, Florence, Flo", welcoming.welcome(" florian,flavie,flavien,florence,flo "));
 	}
+	
+	@Test
+	void test_welcome_plusieurs_with_yell() {
+		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", welcoming.welcome("amy,BOB,jerry"));
+		assertEquals("Hello, Flavie, Florence. AND HELLO, FLORIAN, FLAVIEN, FLO !", welcoming.welcome(" FLORIAN,flavie,FLAVIEN,florence,FLO "));
+	}
 
 }
