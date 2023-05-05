@@ -42,10 +42,11 @@ public class Welcome {
 			for (int i = 0; i<noms.length; i++) {
 				if(noms[i].equals(noms[i].toUpperCase())) {
 					resCaps.append(VIRGULE);
-					resCaps.append(noms[i]);
+					resCaps.append(noms[i].trim());
 					capsCounter++;
 				} else {
 					res.append(VIRGULE);
+					noms[i] = noms[i].trim();
 					res.append(Character.toUpperCase(noms[i].charAt(0)));
 					res.append(noms[i].substring(1));
 					counter++;

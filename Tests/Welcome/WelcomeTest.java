@@ -58,5 +58,10 @@ class WelcomeTest {
 		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !", welcoming.welcome("bob,AMY,jerry,JACK"));
 	}
 	
+	@Test
+	void test_welcome_espaces() {
+		assertEquals("Hello, Bob, Amy and Jerry", welcoming.welcome("   bob,amy    ,  jerry  "));
+	}
+	
 
 }
